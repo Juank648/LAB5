@@ -13,46 +13,46 @@ import org.primefaces.PrimeFaces;
 @ManagedBean(name = "calculadoraBean")
 @ApplicationScoped
 public class faces{
-	private ArrayList<Double> datosIngresados;
-	private double media;
-	private double standardDesviation;
-	private double variance;
-	private double mode;
+	private ArrayList<Float> datosIngresados;
+	private float media;
+	private float standardDesviation;
+	private float variance;
+	private float mode;
 	public String cantidadNumeros;
-	public double prueba;
+	public float prueba;
 	
 	public faces(){
-		datosIngresados = new ArrayList<Double>();
-		media = 0;
-		standardDesviation = 0;
-		variance = 0;
-		mode = 0;
+		datosIngresados = new ArrayList<Float>();
+		media = 0.0;
+		standardDesviation = 0.0;
+		variance = 0.0;
+		mode = 0.0;
 		cantidadNumeros = "";
-		prueba = 0;
+		prueba = 0.0;
 	}
 	
-	public double getPrueba() {
+	public float getPrueba() {
 		return prueba;
 	}
 	
-	public void setDatosIngresados(ArrayList <Double> datosIngresados){
+	public void setDatosIngresados(ArrayList <Float> datosIngresados){
 		this.datosIngresados = datosIngresados;
 	}
 	
-	public ArrayList<Double> getDatosIngresados() {
+	public ArrayList<Float> getDatosIngresados() {
 		return datosIngresados;
 	}
 	
-	public double getMedia(){
+	public float getMedia(){
 		return media;
 	}
-	public double getStandardDesviation(){
+	public float getStandardDesviation(){
 		return standardDesviation;
 	}
-	public double getVariance(){
+	public float getVariance(){
 		return variance;
 	}
-	public double getMode(){
+	public float getMode(){
 		return mode;
 	}
 	
@@ -65,12 +65,12 @@ public class faces{
 		return cantidadNumeros;
 	}
 
-	public ArrayList<Double> convertirString() {
+	public ArrayList<Float> convertirString() {
 		String pend = "";
 		for(int i = 0; i < cantidadNumeros.length(); i++) {
 			char t = ';';
 			if(cantidadNumeros.charAt(i) == t) {
-				double doble = Double.parseDouble(pend);
+				float doble=Float.parseFloat(pend)
 				datosIngresados.add(doble);
 				pend = "";
 			}else {
@@ -82,11 +82,11 @@ public class faces{
 	
 	public double calculateMean(){
 		//datosIngresados = convertirString();
-		double res = 0; 
+		double res = 0.0; 
 		for(int i = 0; i<datosIngresados.size();i++){
 			res += datosIngresados.get(i);
 		}
-		res = res/datosIngresados.size();
+		//res = res/datosIngresados.size();
 		this.media = res;
 		return res;
 	}
