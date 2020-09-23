@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:17:00:14 -0500] "GET /helloServlet HTTP/1.1" 200 16 http-bio-8080-exec-1 39
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:17:37:43 -0500] "GET /webApp HTTP/1.1" 400 22 http-bio-8080-exec-4 31
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:17:37:52 -0500] "GET /webApp/1 HTTP/1.1" 404 967 http-bio-8080-exec-5 35
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:17:39:04 -0500] "GET /webApp?id=1 HTTP/1.1" 200 164 http-bio-8080-exec-8 2368
+0:0:0:0:0:0:0:1 - - [18/Sep/2020:18:05:42 -0500] "GET /faces/calculadora.xhtml HTTP/1.1" 404 997 http-bio-8080-exec-1 2

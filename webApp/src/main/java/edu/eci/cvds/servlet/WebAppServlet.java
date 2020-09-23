@@ -19,7 +19,7 @@ import java.net.*;
 public class WebAppServlet extends HttpServlet{
     static final long serialVersionUID = 35L;
 	ArrayList<Todo> lista = new ArrayList<Todo>();
-	
+	public String var = "";
 	
 
     @Override
@@ -98,5 +98,9 @@ public class WebAppServlet extends HttpServlet{
 	   catch (Exception e){
 	       responseWriter.write("Requerimiento Invalido");
 	   }  
+   }
+   public void setVar(String var){
+	   this.var = var;
+	   
    }
 }

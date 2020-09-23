@@ -1,0 +1,17 @@
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:00:30 -0500] "POST /HServlet HTTP/1.1" 404 967 http-bio-8080-exec-1 71
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:00:45 -0500] "GET /webApp HTTP/1.1" 400 22 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:01:01 -0500] "GET /webApp?id=1 HTTP/1.1" 200 164 http-bio-8080-exec-2 1969
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:26:15 -0500] "GET /index.html HTTP/1.1" 200 454 http-bio-8080-exec-1 61
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:26:15 -0500] "GET /JS/Comprobante.js HTTP/1.1" 200 425 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:26:18 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-4 6
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:26:37 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-2 3
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:26:43 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-5 1
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:28:49 -0500] "GET /index.html HTTP/1.1" 304 - http-bio-8080-exec-1 105
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:28:52 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-3 14
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:29:59 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-4 1
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:30:08 -0500] "GET /webApp?id=1 HTTP/1.1" 200 164 http-bio-8080-exec-5 827
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:55:13 -0500] "GET /index.html HTTP/1.1" 200 503 http-bio-8080-exec-1 56
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:01:55:16 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:02:03:06 -0500] "GET /index.html HTTP/1.1" 200 498 http-bio-8080-exec-1 59
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:02:03:08 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [19/Sep/2020:02:03:10 -0500] "POST /webApp HTTP/1.1" 400 22 http-bio-8080-exec-2 3

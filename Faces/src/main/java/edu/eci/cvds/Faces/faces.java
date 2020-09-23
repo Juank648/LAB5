@@ -13,46 +13,46 @@ import org.primefaces.PrimeFaces;
 @ManagedBean(name = "calculadoraBean")
 @ApplicationScoped
 public class faces{
-	private ArrayList<Float> datosIngresados;
-	private float media;
-	private float standardDesviation;
-	private float variance;
-	private float mode;
+	private ArrayList<Double> datosIngresados;
+	private double media;
+	private double standardDesviation;
+	private double variance;
+	private double mode;
 	public String cantidadNumeros;
-	public float prueba;
+	public double prueba;
 	
 	public faces(){
-		datosIngresados = new ArrayList<Float>();
-		media = 0.0;
-		standardDesviation = 0.0;
-		variance = 0.0;
-		mode = 0.0;
+		datosIngresados = new ArrayList<Double>();
+		media = 0;
+		standardDesviation = 0;
+		variance = 0;
+		mode = 0;
 		cantidadNumeros = "";
-		prueba = 0.0;
+		prueba = 0;
 	}
 	
-	public float getPrueba() {
+	public double getPrueba() {
 		return prueba;
 	}
 	
-	public void setDatosIngresados(ArrayList <Float> datosIngresados){
+	public void setDatosIngresados(ArrayList <Double> datosIngresados){
 		this.datosIngresados = datosIngresados;
 	}
 	
-	public ArrayList<Float> getDatosIngresados() {
+	public ArrayList<Double> getDatosIngresados() {
 		return datosIngresados;
 	}
 	
-	public float getMedia(){
+	public double getMedia(){
 		return media;
 	}
-	public float getStandardDesviation(){
+	public double getStandardDesviation(){
 		return standardDesviation;
 	}
-	public float getVariance(){
+	public double getVariance(){
 		return variance;
 	}
-	public float getMode(){
+	public double getMode(){
 		return mode;
 	}
 	
@@ -65,34 +65,42 @@ public class faces{
 		return cantidadNumeros;
 	}
 
-	public ArrayList<Float> convertirString() {
+	public  ArrayList<Double> convertirString() {
+    	//ArrayList<Double> datosIngresados = new ArrayList<Double>();
 		String pend = "";
+		//System.out.println("Inicio");
 		for(int i = 0; i < cantidadNumeros.length(); i++) {
 			char t = ';';
-			if(cantidadNumeros.charAt(i) == t) {
-				float doble=Float.parseFloat(pend)
+			//System.out.println(cantidadNumeros.charAt(i));
+			//System.out.println(i);
+			if(cantidadNumeros.charAt(i) == t || i == cantidadNumeros.length()-1) {
+				if(i == cantidadNumeros.length()-1) {
+					pend +=  cantidadNumeros.charAt(i);
+				}
+				double doble = Double.parseDouble(pend);
 				datosIngresados.add(doble);
 				pend = "";
 			}else {
 				pend +=  cantidadNumeros.charAt(i);
 			}
 		}
+		//System.out.println("Fin");
 		return datosIngresados;
 	}
 	
 	public double calculateMean(){
-		//datosIngresados = convertirString();
-		double res = 0.0; 
+		convertirString();
+		double res = 0; 
 		for(int i = 0; i<datosIngresados.size();i++){
 			res += datosIngresados.get(i);
 		}
-		//res = res/datosIngresados.size();
+		res = res/datosIngresados.size();
 		this.media = res;
 		return res;
 	}
 	
 	public double calculateStandardDeviation(){
-		//datosIngresados = convertirString();
+		convertirString();
 		double med = 0;
 		med = calculateMean();
 		double x = 0; 
@@ -107,7 +115,7 @@ public class faces{
 	}
 	
 	public double calculateVariance(){
-		//datosIngresados = convertirString();
+		convertirString();
 		double med = 0;
 		med = calculateMean();
 		double x = 0; 
@@ -122,7 +130,7 @@ public class faces{
 	}
 	
 	public double calculateMode(){
-		//datosIngresados = convertirString();
+		convertirString();
 		int maximoNumRepeticiones= 0;
         double moda= 0;
 		for(int i=0; i<datosIngresados.size(); i++)
@@ -130,7 +138,7 @@ public class faces{
 			int numRepeticiones= 0;
 			for(int j=0; j<datosIngresados.size(); j++)
 			{
-				if(datosIngresados.get(i)==datosIngresados.get(j))
+				if(datosIngresados.get(i).equals(datosIngresados.get(j)))
 				{
 					numRepeticiones++;
 				}   //fin if
@@ -138,18 +146,21 @@ public class faces{
 				{
 					moda= datosIngresados.get(i);
 					maximoNumRepeticiones= numRepeticiones;
-				}   //fin if
+				}
+				
+				//fin if
 			}
 		}   //fin for
 		this.mode = moda;
 		return moda;
 	}
 	public void restart(){
+		
+		this.datosIngresados = new ArrayList<Double>();
 		this.mode = 0;
 		this.standardDesviation = 0;
 		this.media = 0;
 		this.variance = 0;
-		this.datosIngresados = null;
 		this.cantidadNumeros = "";
 	}
 	
